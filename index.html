@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>APEX AI OPS | Dashboard operativo</title>
+  <meta name="description" content="Prototipo visual de interfaz industrial para chatbot de mantenimiento y balanceo de líneas con visión e IA." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Inicio APEX AI OPS">
+        <div class="brand-mark">A</div>
+        <div class="brand-text"><strong>APEX</strong><span>AI OPS</span></div>
+      </a>
+      <div class="topbar-main">
+        <div class="topbar-selects">
+          <div class="selector"><strong>Planta Centro</strong><span>⌄</span></div>
+          <div class="selector"><strong>Línea 3 - Ensamble Final</strong><span>⌄</span></div>
+        </div>
+        <div class="topbar-status">
+          <div class="shift">◷ <span><b>Turno A</b><br />06:00 - 14:00</span></div>
+          <div class="status-pill"><span class="status-dot" data-operation-status-dot></span><span data-operation-status-text>Operación normal</span></div>
+          <div class="notif-wrapper">
+            <button class="icon-btn" type="button" data-toggle-notifications aria-label="Notificaciones">🔔<span class="badge">3</span></button>
+            <div class="notif-menu" data-notifications-menu>
+              <div class="card-header" style="padding:0 4px 10px;min-height:auto;border-bottom:0;"><h3 class="card-title">Notificaciones</h3></div>
+              <div class="alert-list" data-alert-list data-limit="3"></div>
+            </div>
+          </div>
+          <button class="icon-btn" type="button" aria-label="Ayuda">?</button>
+          <div class="user-menu"><div class="avatar">👤</div><div class="user-label"><strong>Administrador</strong><span>Operaciones</span></div><span>⌄</span></div>
+        </div>
+      </div>
+    </header>
+
+    <aside class="sidebar">
+      <nav class="nav-list" aria-label="Navegación principal">
+        <a class="nav-item active" href="index.html"><span class="nav-icon">⌂</span><span>Resumen</span></a>
+        <a class="nav-item" href="operacion.html"><span class="nav-icon">✣</span><span>Operación en vivo</span></a>
+        <a class="nav-item" href="balanceo.html"><span class="nav-icon">▥</span><span>Análisis de línea</span></a>
+        <a class="nav-item" href="mantenimiento.html"><span class="nav-icon">⚙</span><span>Mantenimiento IA</span></a>
+        <a class="nav-item" href="alertas.html"><span class="nav-icon">⚠</span><span>Alertas</span></a>
+        <a class="nav-item" href="historial.html"><span class="nav-icon">◴</span><span>Historial</span></a>
+        <a class="nav-item" href="reportes.html"><span class="nav-icon">□</span><span>Reportes</span></a>
+        <a class="nav-item" href="configuracion.html"><span class="nav-icon">⚙</span><span>Configuración</span></a>
+      </nav>
+
+      <div class="sidebar-section-title">Casos de uso</div>
+      <div class="usecase-rail">
+        <article class="usecase-mini">
+          <header><h3>Chatbot de mantenimiento</h3><div class="usecase-icon">💬</div></header>
+          <p>Asistente IA para diagnóstico y solución de fallas.</p>
+          <a class="link-arrow" href="mantenimiento.html">Abrir →</a>
+        </article>
+        <article class="usecase-mini">
+          <header><h3>Balanceo de líneas con visión e IA</h3><div class="usecase-icon">◎</div></header>
+          <p>Monitoreo de estaciones y detección de cuellos de botella.</p>
+          <a class="link-arrow" href="balanceo.html">Abrir →</a>
+        </article>
+      </div>
+      <button class="collapse-btn" data-collapse-sidebar type="button">← <span>Colapsar menú</span></button>
+    </aside>
+
+    <main class="main">
+      <section class="demo-banner">
+        <div>
+          <strong>Demo visual para cliente industrial.</strong>
+          <p>Esta versión no conecta cámaras, sensores ni modelos reales. Simula cómo se vería la operación diaria para explicar flujo, prioridades y módulos.</p>
+        </div>
+        <button class="btn primary" type="button" data-run-demo>Simular operación</button>
+      </section>
+
+      <div class="dashboard-grid">
+        <section class="kpi-grid" data-kpis aria-label="Indicadores principales"></section>
+
+        <section class="content-grid">
+          <article class="card">
+            <header class="card-header">
+              <h2 class="card-title">Chatbot de mantenimiento</h2>
+              <span class="ai-status"><span class="status-dot info"></span>IA en línea</span>
+            </header>
+            <div class="card-body chat-layout">
+              <div class="chat-column">
+                <div data-chat-list>
+                  <div class="message user">
+                    <div class="message-meta"><span>Técnico</span><time>10:24</time></div>
+                    <p>La prensa #12 presenta vibración excesiva en el motor principal.</p>
+                  </div>
+                  <div class="message ai">
+                    <div class="message-meta"><span>Asistente IA</span><time>10:24</time></div>
+                    <p>He analizado el historial y los patrones reportados. Posibles causas identificadas:</p>
+                    <ol>
+                      <li>Desalineación de acoplamiento</li>
+                      <li>Rodamiento desgastado</li>
+                      <li>Fijación suelta en la base del motor</li>
+                    </ol>
+                    <p style="margin-top:8px;">¿Deseas que te guíe en una verificación paso a paso?</p>
+                  </div>
+                </div>
+                <div class="actions-list">
+                  <h4 class="subsection-title">Acciones recomendadas</h4>
+                  <div class="action-row"><span class="checkbox">✓</span><span>Verificar alineación de acoplamiento</span><button class="small-btn">Paso a paso</button></div>
+                  <div class="action-row"><span class="checkbox">✓</span><span>Inspeccionar condición de rodamientos</span><button class="small-btn">Procedimiento</button></div>
+                  <div class="action-row"><span class="checkbox">✓</span><span>Revisar pernos de anclaje y base</span><button class="small-btn">Checklist</button></div>
+                </div>
+                <form class="chat-input" data-chat-form>
+                  <input data-chat-input type="text" placeholder="Escribe tu pregunta o describe el problema..." />
+                  <button class="send-btn" type="submit" aria-label="Enviar">➤</button>
+                </form>
+              </div>
+
+              <aside class="aside-box">
+                <div class="aside-section">
+                  <h4>Recursos</h4>
+                  <div class="resource-item">📄 SOP - Alineación de motores <span>v2.1</span></div>
+                  <div class="resource-item">☑ Checklist - Vibraciones mecánicas</div>
+                  <div class="resource-item">📘 Manual - Prensa modelo P12</div>
+                </div>
+                <div class="aside-section">
+                  <h4>Historial relevante</h4>
+                  <div class="history-item">Orden #247389<br />Vibración en motor<br /><span>Hace 3 días</span><span class="tag good">Resuelto</span></div>
+                  <div class="history-item">Orden #241887<br />Desalineación acoplamiento<br /><span>Hace 7 días</span><span class="tag good">Resuelto</span></div>
+                  <a class="link-arrow" href="historial.html">Ver más historial →</a>
+                </div>
+              </aside>
+            </div>
+          </article>
+
+          <article class="card">
+            <header class="card-header">
+              <h2 class="card-title">Balanceo de líneas con visión e IA</h2>
+              <span class="ai-status"><span class="status-dot info"></span>IA en línea</span>
+            </header>
+            <div class="card-body">
+              <div class="panel-controls">
+                <div class="control-left">
+                  <select class="select-control" aria-label="Seleccionar línea"><option>Línea 3 - Ensamble Final</option></select>
+                  <div class="segmented" role="group" aria-label="Modo de visualización">
+                    <button class="active" type="button" data-line-mode="line">Vista de línea</button>
+                    <button type="button" data-line-mode="heatmap">Mapa de calor</button>
+                  </div>
+                </div>
+                <div class="control-right">
+                  <button class="small-btn">Últimos 15 min ▾</button>
+                  <button class="small-btn">↻</button>
+                  <button class="small-btn">⋮</button>
+                </div>
+              </div>
+              <div class="line-visual" aria-label="Vista simulada de estaciones">
+                <div class="conveyor"></div>
+                <div class="stations" data-stations></div>
+              </div>
+              <div class="utilization-chart">
+                <div class="chart-title-row"><span>Utilización por estación (%)</span><span style="color:var(--amber);">Balance objetivo: 70%</span></div>
+                <div class="bars" data-utilization-bars></div>
+              </div>
+              <div class="lower-grid">
+                <article class="info-card">
+                  <h4 style="color:#f0aaa6;">⚠ Cuello de botella detectado</h4>
+                  <p><strong style="color:var(--text-100);">Estación 05 - Atornillado</strong></p>
+                  <p>Utilización: <b style="color:#f0aaa6;">96%</b> · Tiempo de ciclo: <b style="color:#f0aaa6;">54.4 s</b></p>
+                  <p>Impacto estimado: <b style="color:#f0aaa6;">-12.3% OEE</b></p>
+                  <button class="btn warning" type="button" data-open-recommendations>Ver recomendaciones</button>
+                </article>
+                <article class="info-card">
+                  <h4>Tiempo de ciclo (prom.)</h4>
+                  <div class="info-value">42.6 s</div>
+                  <p>-5.3 s vs. turno anterior</p>
+                  <svg class="sparkline" viewBox="0 0 180 36" aria-hidden="true"><polyline points="0,8 14,13 28,17 42,18 56,21 70,17 84,20 98,22 112,19 126,21 140,24 154,18 180,20" fill="none" stroke="#d49b34" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                </article>
+                <article class="info-card">
+                  <h4>Distribución de trabajo</h4>
+                  <div class="donut-wrap"><div class="donut"></div><div class="legend"><div class="legend-row"><span class="legend-dot"></span>Bajo cargado · 2 (25%)</div><div class="legend-row"><span class="legend-dot blue"></span>Balanceado · 4 (50%)</div><div class="legend-row"><span class="legend-dot red"></span>Sobrecargado · 2 (25%)</div></div></div>
+                </article>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="bottom-grid">
+          <article class="card info-card">
+            <h4>Acciones sugeridas</h4>
+            <div data-recommendations data-short="true"></div>
+            <a class="link-arrow" href="balanceo.html" style="margin-top:10px;">Ver todas las recomendaciones →</a>
+          </article>
+          <article class="card info-card">
+            <h4>Estado de operación</h4>
+            <div class="status-metrics">
+              <div class="status-metric"><span>Producción</span><strong>1,250 uds</strong></div>
+              <div class="status-metric"><span>Meta del turno</span><strong>1,600 uds</strong></div>
+              <div class="status-metric"><span>Progreso</span><strong>78%</strong></div>
+              <div class="status-metric"><span>Paros no programados</span><strong>18 min</strong></div>
+            </div>
+          </article>
+          <article class="card info-card">
+            <header style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><h4 style="margin:0;">Alertas activas (7)</h4><a class="link-arrow" href="alertas.html">Ver todas</a></header>
+            <div class="alert-list" data-alert-list data-limit="3"></div>
+          </article>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" data-modal>
+    <section class="modal" role="dialog" aria-modal="true" aria-label="Recomendaciones para estación 05">
+      <header><h3>Recomendaciones para estación 05</h3><button class="icon-btn" data-close-modal type="button">×</button></header>
+      <div class="modal-body">
+        <p class="helper-note">Estas recomendaciones son simuladas. En producción se alimentarían con datos de visión, tiempos de ciclo, historial de paros y reglas del proceso.</p>
+        <div style="margin-top:12px;" data-recommendations></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

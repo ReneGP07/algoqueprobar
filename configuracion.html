@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Configuración | APEX AI OPS</title>
+  <meta name="description" content="Prototipo visual de interfaz industrial APEX AI OPS." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Inicio APEX AI OPS">
+        <div class="brand-mark">A</div>
+        <div class="brand-text"><strong>APEX</strong><span>AI OPS</span></div>
+      </a>
+      <div class="topbar-main">
+        <div class="topbar-selects">
+          <div class="selector"><strong>Planta Centro</strong><span>⌄</span></div>
+          <div class="selector"><strong>Línea 3 - Ensamble Final</strong><span>⌄</span></div>
+        </div>
+        <div class="topbar-status">
+          <div class="shift">◷ <span><b>Turno A</b><br />06:00 - 14:00</span></div>
+          <div class="status-pill"><span class="status-dot" data-operation-status-dot></span><span data-operation-status-text>Operación normal</span></div>
+          <div class="notif-wrapper">
+            <button class="icon-btn" type="button" data-toggle-notifications aria-label="Notificaciones">🔔<span class="badge">3</span></button>
+            <div class="notif-menu" data-notifications-menu>
+              <div class="card-header" style="padding:0 4px 10px;min-height:auto;border-bottom:0;"><h3 class="card-title">Notificaciones</h3></div>
+              <div class="alert-list" data-alert-list data-limit="3"></div>
+            </div>
+          </div>
+          <button class="icon-btn" type="button" aria-label="Ayuda">?</button>
+          <div class="user-menu"><div class="avatar">👤</div><div class="user-label"><strong>Administrador</strong><span>Operaciones</span></div><span>⌄</span></div>
+        </div>
+      </div>
+    </header>
+
+    <aside class="sidebar">
+      <nav class="nav-list" aria-label="Navegación principal">
+        <a class="nav-item " href="index.html"><span class="nav-icon">⌂</span><span>Resumen</span></a><a class="nav-item " href="operacion.html"><span class="nav-icon">✣</span><span>Operación en vivo</span></a><a class="nav-item " href="balanceo.html"><span class="nav-icon">▥</span><span>Análisis de línea</span></a><a class="nav-item " href="mantenimiento.html"><span class="nav-icon">⚙</span><span>Mantenimiento IA</span></a><a class="nav-item " href="alertas.html"><span class="nav-icon">⚠</span><span>Alertas</span></a><a class="nav-item " href="historial.html"><span class="nav-icon">◴</span><span>Historial</span></a><a class="nav-item " href="reportes.html"><span class="nav-icon">□</span><span>Reportes</span></a><a class="nav-item active" href="configuracion.html"><span class="nav-icon">⚙</span><span>Configuración</span></a>
+      </nav>
+      <div class="sidebar-section-title">Casos de uso</div>
+      <div class="usecase-rail">
+        <article class="usecase-mini">
+          <header><h3>Chatbot de mantenimiento</h3><div class="usecase-icon">💬</div></header>
+          <p>Asistente IA para diagnóstico y solución de fallas.</p>
+          <a class="link-arrow" href="mantenimiento.html">Abrir →</a>
+        </article>
+        <article class="usecase-mini">
+          <header><h3>Balanceo de líneas con visión e IA</h3><div class="usecase-icon">◎</div></header>
+          <p>Monitoreo de estaciones y detección de cuellos de botella.</p>
+          <a class="link-arrow" href="balanceo.html">Abrir →</a>
+        </article>
+      </div>
+      <button class="collapse-btn" data-collapse-sidebar type="button">← <span>Colapsar menú</span></button>
+    </aside>
+
+    <main class="main">
+      
+<section class="page-title-row"><div><div class="page-kicker">Administración</div><h1>Configuración</h1><p>Espacio para adaptar la interfaz por cliente: planta, líneas, estaciones, permisos, documentos y criterios de alerta. No guarda cambios en este prototipo.</p></div></section>
+<section class="section-grid"><article class="card workflow-card"><div class="workflow-number">1</div><h3>Plantas y líneas</h3><p>Alta de líneas, estaciones, nombres de proceso y turnos.</p></article><article class="card workflow-card"><div class="workflow-number">2</div><h3>Documentos</h3><p>SOP, checklists y manuales autorizados para consulta del asistente.</p></article><article class="card workflow-card"><div class="workflow-number">3</div><h3>Alertas</h3><p>Umbrales de utilización, tiempo de ciclo, severidad y responsables.</p></article></section><section class="card info-card" style="margin-top:14px;"><h4>Nota de estabilidad</h4><p>Esta demo separa estructura visual de lógica real. Para producción se recomienda conectar APIs de autenticación, historial, visión, sensores y almacenamiento por etapas, no todo al mismo tiempo.</p></section>
+
+    </main>
+  </div>
+
+  <div class="modal-backdrop" data-modal>
+    <section class="modal" role="dialog" aria-modal="true" aria-label="Recomendaciones">
+      <header><h3>Recomendaciones operativas</h3><button class="icon-btn" data-close-modal type="button">×</button></header>
+      <div class="modal-body">
+        <p class="helper-note">Demo visual. En producción, esta zona se conectaría a reglas del proceso, datos de visión, sensores e historial.</p>
+        <div style="margin-top:12px;" data-recommendations></div>
+      </div>
+    </section>
+  </div>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
